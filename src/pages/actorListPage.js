@@ -1,12 +1,12 @@
 import React from "react";
-import PageTemplate from "../components/templateMovieListPage";
+import PageTemplate from "../components/templateActorListPage";
 import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
 import {getActorList} from '../api/tmdb-api';
-import PlaylistAddIcon from '../components/cardIcons/playlistAddIcon';
+import AddToFavouritesIcon from '../components/cardIcons/addToFavourites';
 
 const ActorListPage = (props) => {
-  const {  data, error, isLoading, isError }  = useQuery('upcoming', getActorList)
+  const {  data, error, isLoading, isError }  = useQuery('discover', getActorList)
 
   if (isLoading) {
     return <Spinner />
@@ -15,16 +15,20 @@ const ActorListPage = (props) => {
   if (isError) {
     return <h1>{error.message}</h1>
   }  
-  const movies = data.results; 
+  const persons = data.results;
+
+  // These three lines are redundant; we will replace them later.
+  const favourites = persons.filter(m => m.favourite)
+  localStorage.setItem('favourites', JSON.stringify(favourites))
  
 
   return (
     <PageTemplate
-      title="Popular Actors"
-      movies={movies}
-      action={(movie) => {
-        return <PlaylistAddIcon movie={movie} />
-      }}      
+      title="Popular actors"
+      persons={persons}
+      action={(person) => {
+        return <AddToFavouritesIcon person={person} />
+      }}
     />    
   );
 };

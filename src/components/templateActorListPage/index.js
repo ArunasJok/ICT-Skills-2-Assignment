@@ -5,7 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import Fab from "@material-ui/core/Fab";
 import Drawer from "@material-ui/core/Drawer";
 import { makeStyles } from "@material-ui/core/styles";
-import MovieList from "../movieList";
+import ActorList from "../actorList";
 
 const useStyles = makeStyles((theme) =>  ({
   root: {
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) =>  ({
   },
 }));
 
-function ActorListPageTemplate({ movies, title, action }) {
+function ActorListPageTemplate({ persons, name, action }) {
   const classes = useStyles();
   const [titleFilter, setTitleFilter] = useState("");
   const [genreFilter, setGenreFilter] = useState("0");
@@ -28,16 +28,14 @@ function ActorListPageTemplate({ movies, title, action }) {
 
   const genreId = Number(genreFilter);
 
-  let displayedMovies = movies
+  let displayedActors = persons
     .filter((m) => {
-      return m.title.toLowerCase().search(titleFilter.toLowerCase()) !== -1;
+      return m.name.toLowerCase().search(titleFilter.toLowerCase()) !== -1;
     })
-    .filter((m) => {
-      return genreId > 0 ? m.genre_ids.includes(genreId) : true;
-    });
+    ;
 
   const handleChange = (type, value) => {
-    if (type === "title") setTitleFilter(value);
+    if (type === "name") setTitleFilter(value);
     else setGenreFilter(value);
   };
 
@@ -45,10 +43,10 @@ function ActorListPageTemplate({ movies, title, action }) {
     <>
     <Grid container className={classes.root}>
       <Grid item xs={12}>
-        <Header title={title} />
+        <Header title={name} />
       </Grid>
       <Grid item container spacing={5}>
-        <MovieList action={action} movies={displayedMovies} />
+        <ActorList action={action} persons={displayedActors} />
       </Grid>
     </Grid>
     <Fab

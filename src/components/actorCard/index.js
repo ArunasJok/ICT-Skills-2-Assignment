@@ -13,7 +13,7 @@ import StarRateIcon from "@material-ui/icons/StarRate";
 import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
 import Avatar from "@material-ui/core/Avatar";
-import { MoviesContext } from "../../contexts/moviesContext";
+import { PersonsContext } from "../../contexts/personsContext";
 
 
 const useStyles = makeStyles({
@@ -24,22 +24,22 @@ const useStyles = makeStyles({
   },
 });
 
-export default function MovieCard({ movie, action }) {
+export default function ActorCard({ person, action }) {
   const classes = useStyles();
-  const { favourites, addToFavourites } = useContext(MoviesContext);
+  const { favourites, addToFavourites } = useContext(PersonsContext);
   //const { playlists, addToPlaylists } = useContext(MoviesContext);
 
    
 
-  if (favourites.find((id) => id === movie.id)) {
-    movie.favourite = true;
+  if (favourites.find((id) => id === person.id)) {
+    person.favourite = true;
   } else {
-    movie.favourite = false
+    person.favourite = false
   }
 
   const handleAddToFavourite = (e) => {
     e.preventDefault();
-    addToFavourites(movie);
+    addToFavourites(person);
   };
 
   
@@ -49,31 +49,31 @@ export default function MovieCard({ movie, action }) {
       <CardHeader
       className={classes.header}
       avatar={
-        movie.favourite ? (
+        person.favourite ? (
           <Avatar className={classes.avatar}>
             <FavoriteIcon />
           </Avatar>
         ) : null
       }
       avatar2={
-        movie.playlist ? (
+        person.playlist ? (
           <Avatar className={classes.avatar}>
             <FavoriteIcon />
           </Avatar>
         ) : null
       }
       
-      title={
+      name={
         <Typography variant="h5" component="p">
-          {movie.title}{" "}
+          {person.name}{" "}
         </Typography>
       }
     />
       <CardMedia
         className={classes.media}
         image={
-          movie.poster_path
-            ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
+          person.poster_path
+            ? `https://image.tmdb.org/t/p/w500/${person.poster_path}`
             : `${process.env.PUBLIC_URL}/assets/film-poster-placeholder.png`
         }
       />
@@ -82,20 +82,20 @@ export default function MovieCard({ movie, action }) {
           <Grid item xs={6}>
             <Typography variant="h6" component="p">
               <CalendarIcon fontSize="small" />
-              {movie.release_date}
+              {person.adult}
             </Typography>
           </Grid>
           <Grid item xs={6}>
             <Typography variant="h6" component="p">
               <StarRateIcon fontSize="small" />
-              {"  "} {movie.vote_average}{" "}
+              {"  "} {person.vote_average}{" "}
             </Typography>
           </Grid>
         </Grid>
       </CardContent>
       <CardActions disableSpacing>
-        {action(movie)}
-        <Link to={`/movies/${movie.id}`}>
+        {action(person)}
+        <Link to={`/persons/${person.id}`}>
           <Button variant="outlined" size="medium" color="primary">
             More Info ...
           </Button>
