@@ -25,6 +25,11 @@ As we are using React v17, in the app's package.json file, replace the dependenc
   },
 Run [$ npm install] from the main directory to install needed JS modules.
 
+Movies Fan app will communicate with The TMDB API (Note: We will use version 3 of the API). An API Key authenticates all requests to the API. Please go to https://www.themoviedb.org/signup and create and account in order to get a key.  In the project base folder, open the .env file and set REACTAPPTMDB_KEY to your new key value.
+
+REACT_APP_TMDB_KEY=.... your API key value ...
+FAST_REFRESH=false
+
 To start the app type:
 $ npm start
 
