@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import Header from "../headerMovieList";
-import FilterCard from "../filterMoviesCard";
 import Grid from "@material-ui/core/Grid";
-import Fab from "@material-ui/core/Fab";
-import Drawer from "@material-ui/core/Drawer";
 import { makeStyles } from "@material-ui/core/styles";
 import ActorList from "../actorList";
 
@@ -24,11 +21,11 @@ function ActorListPageTemplate({ persons, name, action }) {
   const classes = useStyles();
   const [titleFilter, setTitleFilter] = useState("");
   const [genreFilter, setGenreFilter] = useState("0");
-  const [drawerOpen, setDrawerOpen] = useState(false);
+  
 
   const genreId = Number(genreFilter);
 
-  let displayedActors = persons
+  let displayedPersons = persons
     .filter((m) => {
       return m.name.toLowerCase().search(titleFilter.toLowerCase()) !== -1;
     })
@@ -46,28 +43,9 @@ function ActorListPageTemplate({ persons, name, action }) {
         <Header title={name} />
       </Grid>
       <Grid item container spacing={5}>
-        <ActorList action={action} persons={displayedActors} />
+        <ActorList action={action} persons={displayedPersons} />
       </Grid>
-    </Grid>
-    <Fab
-        color="secondary"
-        variant="extended"
-        onClick={() => setDrawerOpen(true)}
-        className={classes.fab}
-      >
-        Filter
-      </Fab>
-      <Drawer
-        anchor="left"
-        open={drawerOpen}
-        onClose={() => setDrawerOpen(false)}
-      >
-        <FilterCard
-          onUserInput={handleChange}
-          titleFilter={titleFilter}
-          genreFilter={genreFilter}
-        />
-      </Drawer>
+    </Grid>    
     </>    
   );
 }

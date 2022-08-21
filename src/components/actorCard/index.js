@@ -63,17 +63,17 @@ export default function ActorCard({ person, action }) {
         ) : null
       }
       
-      name={
+      title={
         <Typography variant="h5" component="p">
-          {person.name}{" "}
+          {person.title}{" "}
         </Typography>
       }
     />
       <CardMedia
         className={classes.media}
         image={
-          person.poster_path
-            ? `https://image.tmdb.org/t/p/w500/${person.poster_path}`
+          person.profile_path
+            ? `https://image.tmdb.org/t/p/w500/${person.profile_path}`
             : `${process.env.PUBLIC_URL}/assets/film-poster-placeholder.png`
         }
       />
@@ -82,13 +82,13 @@ export default function ActorCard({ person, action }) {
           <Grid item xs={6}>
             <Typography variant="h6" component="p">
               <CalendarIcon fontSize="small" />
-              {person.adult}
+              {person.id}
             </Typography>
           </Grid>
           <Grid item xs={6}>
             <Typography variant="h6" component="p">
               <StarRateIcon fontSize="small" />
-              {"  "} {person.vote_average}{" "}
+              {"  "} {person.name}{" "}
             </Typography>
           </Grid>
         </Grid>
