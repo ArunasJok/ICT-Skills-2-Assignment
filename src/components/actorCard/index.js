@@ -78,17 +78,11 @@ export default function ActorCard({ person, action }) {
         }
       />
       <CardContent>
-        <Grid container>
-          <Grid item xs={6}>
-            <Typography variant="h6" component="p">
-              <CalendarIcon fontSize="small" />
-              {person.id}
-            </Typography>
-          </Grid>
+        <Grid container>          
           <Grid item xs={6}>
             <Typography variant="h6" component="p">
               <StarRateIcon fontSize="small" />
-              {"  "} {person.popularity}{" "}
+              {" Popularity rating "} {person.popularity}{" "}
             </Typography>
           </Grid>
         </Grid>

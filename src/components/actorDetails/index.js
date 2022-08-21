@@ -57,16 +57,7 @@ const ActorDetails = ( {person}) => {
         {person.biography}
       </Typography>
       <div className={classes.chipRoot}>
-      <Paper component="ul" className={classes.chipSet}>
-        <li>
-          <Chip label="Genres" className={classes.chipLabel} color="primary" />
-        </li>
-        {person.known_for_department.map((g) => (
-          <li key={g.name}>
-            <Chip label={g.name} className={classes.chip} />
-          </li>
-        ))}
-      </Paper>
+      
       <Paper component="ul" className={classes.chipSet}>
         <Chip icon={<AccessTimeIcon />} label={`Born in ${person.birthday}`} />
         <Chip
