@@ -28,21 +28,21 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <SiteHeader />
-        <PersonsContextProvider>
+        <SiteHeader />        
         <MoviesContextProvider>
-        <Routes>
-          <Route path="/reviews/form" element={<AddMovieReviewPage/>} />
-          <Route path="/movies/favourites" element={<FavouriteMoviesPage/>} />
-          <Route path="/movies/:id" element={<MoviePage/>} />
-          <Route path="/" element={<HomePage />} />
-          <Route path="/movies/upcoming" element={<UpcomingMoviesPage/>} />
-          <Route path="/persons" element={<ActorListPage/>} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-          <Route path="/reviews/:id" element={<MovieReviewPage/>} />
-        </Routes>
-        </MoviesContextProvider>
-        </PersonsContextProvider>
+          <PersonsContextProvider>
+          <Routes>
+            <Route path="/reviews/form" element={<AddMovieReviewPage/>} />
+            <Route path="/movies/favourites" element={<FavouriteMoviesPage/>} />
+            <Route path="/movies/:id" element={<MoviePage/>} />
+            <Route path="/" element={<HomePage />} />
+            <Route path="/movies/upcoming" element={<UpcomingMoviesPage/>} />   
+            <Route path="/persons" element={<ActorListPage/>} />       
+            <Route path="*" element={<Navigate to="/" replace />} />
+            <Route path="/reviews/:id" element={<MovieReviewPage/>} />
+          </Routes>
+          </PersonsContextProvider>
+        </MoviesContextProvider>                
       </BrowserRouter>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>

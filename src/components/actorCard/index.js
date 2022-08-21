@@ -26,20 +26,20 @@ const useStyles = makeStyles({
 
 export default function ActorCard({ person, action }) {
   const classes = useStyles();
-  const { favourites, addToFavourites } = useContext(PersonsContext);
+  const { favourites2, addToFavourites2 } = useContext(PersonsContext);
   //const { playlists, addToPlaylists } = useContext(MoviesContext);
 
    
 
-  if (favourites.find((id) => id === person.id)) {
-    person.favourite = true;
+  if (favourites2.find((id) => id === person.id)) {
+    person.favourite2 = true;
   } else {
-    person.favourite = false
+    person.favourite2 = false
   }
 
-  const handleAddToFavourite = (e) => {
+  const handleAddToFavourite2 = (e) => {
     e.preventDefault();
-    addToFavourites(person);
+    addToFavourites2(person);
   };
 
   
@@ -49,14 +49,14 @@ export default function ActorCard({ person, action }) {
       <CardHeader
       className={classes.header}
       avatar={
-        person.favourite ? (
+        person.favourite2 ? (
           <Avatar className={classes.avatar}>
             <FavoriteIcon />
           </Avatar>
         ) : null
       }
       avatar2={
-        person.playlist ? (
+        person.playlist2 ? (
           <Avatar className={classes.avatar}>
             <FavoriteIcon />
           </Avatar>
@@ -65,7 +65,7 @@ export default function ActorCard({ person, action }) {
       
       title={
         <Typography variant="h5" component="p">
-          {person.title}{" "}
+          {person.name}{" "}
         </Typography>
       }
     />
@@ -88,7 +88,7 @@ export default function ActorCard({ person, action }) {
           <Grid item xs={6}>
             <Typography variant="h6" component="p">
               <StarRateIcon fontSize="small" />
-              {"  "} {person.name}{" "}
+              {"  "} {person.popularity}{" "}
             </Typography>
           </Grid>
         </Grid>
