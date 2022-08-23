@@ -15,6 +15,8 @@ import AddMovieReviewPage from './pages/addMovieReviewPage';
 import ActorListPage from "./pages/actorListPage";
 import ActorPage from './pages/actorDetailsPage';
 import TvSeriesListPage from "./pages/tvSeriesListPage"
+import SeriesContextProvider from "./contexts/seriesContext";
+import SeriePage from './pages/serieDetailsPage';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -33,18 +35,21 @@ const App = () => {
         <SiteHeader />        
         <MoviesContextProvider>
           <PersonsContextProvider>
-          <Routes>
-            <Route path="/reviews/form" element={<AddMovieReviewPage/>} />
-            <Route path="/movies/favourites" element={<FavouriteMoviesPage/>} />
-            <Route path="/movies/:id" element={<MoviePage/>} />
-            <Route path="/" element={<HomePage />} />
-            <Route path="/movies/upcoming" element={<UpcomingMoviesPage/>} />   
-            <Route path="/persons" element={<ActorListPage/>} />
-            <Route path="/persons/:id" element={<ActorPage/>} />       
-            <Route path="*" element={<Navigate to="/" replace />} />
-            <Route path="/reviews/:id" element={<MovieReviewPage/>} />
-            <Route path="/series" element={<TvSeriesListPage/>} />
-          </Routes>
+            <SeriesContextProvider>
+              <Routes>
+                <Route path="/reviews/form" element={<AddMovieReviewPage/>} />
+                <Route path="/movies/favourites" element={<FavouriteMoviesPage/>} />
+                <Route path="/movies/:id" element={<MoviePage/>} />
+                <Route path="/" element={<HomePage />} />
+                <Route path="/movies/upcoming" element={<UpcomingMoviesPage/>} />   
+                <Route path="/persons" element={<ActorListPage/>} />
+                <Route path="/persons/:id" element={<ActorPage/>} />       
+                <Route path="*" element={<Navigate to="/" replace />} />
+                <Route path="/reviews/:id" element={<MovieReviewPage/>} />
+                <Route path="/series" element={<TvSeriesListPage/>} />
+                <Route path="/series/:id" element={<SeriePage/>} />
+              </Routes>
+            </SeriesContextProvider>  
           </PersonsContextProvider>
         </MoviesContextProvider>                
       </BrowserRouter>
