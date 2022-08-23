@@ -59,22 +59,50 @@ e.g.
 
 ![][d2]
 
+>The view below lists most popular actors.
+
 ![][d3]
+
+>The view below shows detailed information on a specific actor.
 
 ![][d4]
 
+>The view below show the option to look for similar movies.
+
 ![][d5]
+
+>The view below lists similar movies to the movie on the left side of the screen.
 
 ![][d6]
 
+>The view below shows that pressing "See Movie" gets you to the detailed movie description.
+
 ![][d7]
+
+## Caching.
+
+
++ Discover series
+
+![][d8]
+
++ Discover popular actors
+
+![][d9]
+
++ Discover similar movies
+
+![][d10]
 
 
 
 [d1]: ./public/listTV.PNG
-[d2]: ./public/specificTV.png
-[d3]: ./public/actorList.png
-[d4]: ./public/actorDetail.png
-[d5]: ./public/similar1.png
-[d6]: ./public/similar2.png
-[d7]: ./public/similar3.png
+[d2]: ./public/specificTV.PNG
+[d3]: ./public/actorList.PNG
+[d4]: ./public/actorDetail.PNG
+[d5]: ./public/similar1.PNG
+[d6]: ./public/similar2.PNG
+[d7]: ./public/similar3.PNG
+[d8]: ./public/discoverSeries.PNG
+[d9]: ./public/discoverPopActors.PNG
+[d10]: ./public/similarMovies.PNG
