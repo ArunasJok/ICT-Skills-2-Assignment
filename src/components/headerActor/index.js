@@ -38,7 +38,7 @@ const ActorHeader = (props) => {
           <HomeIcon color="primary" />
         </a>
         <br />
-        <span className={classes.tagLine}>{`   "${person.birthday}"`} </span>
+        <span className={classes.tagLine}>{` Also known as:  "${person.also_known_as}"`} </span>
       </Typography>
       <IconButton aria-label="go forward"  onClick={() => navigate(1)}>
         <ArrowForwardIcon color="primary" fontSize="large" />

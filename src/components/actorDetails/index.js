@@ -2,13 +2,11 @@ import React, { useState } from "react";
 import Chip from "@material-ui/core/Chip";
 import Paper from "@material-ui/core/Paper";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
-import MonetizationIcon from "@material-ui/icons/MonetizationOn";
+import HomeIcon from '@material-ui/icons/Home';
 import StarRate from "@material-ui/icons/StarRate";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import NavigationIcon from "@material-ui/icons/Navigation";
-import Fab from "@material-ui/core/Fab";
-import Drawer from "@material-ui/core/Drawer";
+
 
 
 
@@ -59,35 +57,21 @@ const ActorDetails = ( {person}) => {
       <div className={classes.chipRoot}>
       
       <Paper component="ul" className={classes.chipSet}>
-        <Chip icon={<AccessTimeIcon />} label={`Born in ${person.birthday}`} />
+        <Chip icon={<AccessTimeIcon />} label={`Born in: ${person.birthday}`} />
         <Chip
-          icon={<MonetizationIcon />}
-          label={`${person.popularity.toLocaleString()}`}
+          icon={<HomeIcon />}
+          label={`Home town: ${person.place_of_birth}`}
         />
         <Chip
           icon={<StarRate />}
-          label={`${person.popularity} (${person.id}`}
-        />
-        <Chip label={`Released: ${person.also_known_as}`} />
+          label={`Known for: ${person.known_for_department}`}
+        />        
       </Paper>
-      </div>
-
-      <Typography variant="h5" component="h3">
-        Filmography
-      </Typography>
+      </div>    
       
       
 
-      {/* New */}
-      <Fab    
-        color="secondary"
-        variant="extended"
-        onClick={() =>setDrawerOpen(true)}
-        className={classes.fab}
-      >
-        <NavigationIcon />
-        Reviews
-      </Fab>
+      
    
       
     </>

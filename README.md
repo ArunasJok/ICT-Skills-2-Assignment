@@ -8,11 +8,11 @@ Name: Arunas Jokubynas
 This is an extension of ICT Skills 2 lab "Movies fan app". 
 
 Newly introduced features: 
-+ Feature 1
-+ Feature 2
-+ Feature 3
-+ etc
-+ etc
++ New "TV Series" list
++ New "Actors" list
++ New "Actor bio" detail
++ New "TV Series info" detail
++ New "Similar Movies" list
 
 ## Setup requirements.
 
@@ -41,58 +41,31 @@ Standard tile design followed from labs.
 New introduced routes:
 
 e.g.
-+ /movies/:id - detailed information on a specific movie.
-+ /movies/upcoming - lists movies soon to be shown in cinemas.
-+ etc.
-+ etc.
++ /similars/:id - detailed information on a similar movie based on a selected movie.
++ /persons - lists of most popular actors at the moment.
++ /persons/:id - detailed information on a specific actor.
++ /series - list of most popular TV shows at the moment.
++ /tvs/:id - detailed information on a specific TV show.
+
 
 ### Views/Pages.
 
-[ For each view in your app, show a screenshot and caption - only new/modified ones in the case of the Movies Fan app. If necessary, use multiple screenshots to cover a view's full capability.
 
-e.g.
->Lists movies from the Discover endpoint. Filtering on title and genre attributes is supported.]
+>The view below lists most popular TV shows. 
 
 ![][d1]
 
-![][d2]
+>The view below shows detailed information on a specific TV show.
 
->Shows detailed information on a specific movie
+![][d2]
 
 ![][detail]
 
 
-### Component catalogue.
-
-[ Use the Storybook UI to highlight the new components for which you developed stories.]
-e.g.
-
-![][stories]
-
-## Caching.
-
-[ List the TMDB server state cached by the app. Include a screenshot(s) of the react-query dev tools to validate your list.]
-
-e.g.
-+ Discover movies (pagination support)
-+ Movie details
- + etc
-+ etc
-
-![][caching]
-
-## Authentication (if relevant).
-
-[Briefly state how you implemented authentication for the app, e.g. basic, Firebase, etc. Also, list the routes that are private/protected.]
-
-e.g.
-+ /reviews/:id
-+ /movies/favourites
 
 
-
-[d1]: ./public/discover1.png
-[d2]: ./public/discover2.png
+[d1]: ./public/listTV.jpg
+[d2]: ./public/specificTV.jpg
 [detail]: ./public/detail.png
 [caching]: ./public/caching.png
 [stories]: ./public/stories.png

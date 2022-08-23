@@ -59,16 +59,16 @@ const SerieDetails = ( {tv}) => {
       <div className={classes.chipRoot}>
       
       <Paper component="ul" className={classes.chipSet}>
-        <Chip icon={<AccessTimeIcon />} label={`Started in ${tv.firs_air_date}`} />
+        <Chip icon={<AccessTimeIcon />} label={`Started in ${tv.first_air_date}`} />
         <Chip
-          icon={<MonetizationIcon />}
-          label={`${tv.popularity.toLocaleString()}`}
+          icon={<AccessTimeIcon />}
+          label={`Run time: ${tv.episode_run_time} min`}
         />
         <Chip
           icon={<StarRate />}
-          label={`${tv.popularity} (${tv.id}`}
+          label={`${tv.type}`}
         />
-        <Chip label={`Released: ${tv.origin_country}`} />
+        <Chip label={`Country of origin: ${tv.origin_country}`} />
       </Paper>
       </div>
       {/* New */}
