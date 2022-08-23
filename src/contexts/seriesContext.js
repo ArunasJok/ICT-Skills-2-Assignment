@@ -28,7 +28,7 @@ const SeriesContextProvider = (props) => {
 
   // We will use this function in a later section
   const removeFromFavourites3 = (tv) => {
-    setFavourites3(favourites3.filter((mId) => mId !== tv.id));
+    setFavourites3(favourites3.filter((sId) => sId !== tv.id));
   };
 
   return (

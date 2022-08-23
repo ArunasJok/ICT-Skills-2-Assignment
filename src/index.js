@@ -47,7 +47,7 @@ const App = () => {
                 <Route path="*" element={<Navigate to="/" replace />} />
                 <Route path="/reviews/:id" element={<MovieReviewPage/>} />
                 <Route path="/series" element={<TvSeriesListPage/>} />
-                <Route path="/series/:id" element={<SeriePage/>} />
+                <Route path="/tvs/:id" element={<SeriePage/>} />
               </Routes>
             </SeriesContextProvider>  
           </PersonsContextProvider>

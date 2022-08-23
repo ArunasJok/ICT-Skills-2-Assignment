@@ -26,8 +26,8 @@ function SerieListPageTemplate({ tvs, name, action }) {
   const genreId = Number(genreFilter);
 
   let displayedSeries = tvs
-    .filter((m) => {
-      return m.name.toLowerCase().search(titleFilter.toLowerCase()) !== -1;
+    .filter((s) => {
+      return s.name.toLowerCase().search(titleFilter.toLowerCase()) !== -1;
     })
     ;
 

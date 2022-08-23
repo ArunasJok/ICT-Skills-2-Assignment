@@ -39,7 +39,7 @@ const TemplateSeriePage = ({ tv, children }) => {
     return <h1>{error.message}</h1>;
   }
 
-  const images = data.profiles;
+  const images = data.posters;
 
   return (
     <div className={classes.root}>
@@ -49,10 +49,10 @@ const TemplateSeriePage = ({ tv, children }) => {
           <div className={classes.imageListRoot}>
             <ImageList rowHeight={500} className={classes.gridList} cols={1}>
               {images.map((image) => (
-                <ImageListItem key={image.poster_path} cols={1}>
+                <ImageListItem key={image.file_path} cols={1}>
                   <img
                     src={`https://image.tmdb.org/t/p/w500/${image.file_path}`}
-                    alt={image.file_path}
+                    alt={image.poster_path}
                   />
                 </ImageListItem>
               ))}

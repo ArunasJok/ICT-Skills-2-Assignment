@@ -82,14 +82,14 @@ export default function SerieCard({ tv, action }) {
           <Grid item xs={6}>
             <Typography variant="h6" component="p">
               <StarRateIcon fontSize="small" />
-              {" Average vote rating "} {tv.vote_average}{" "}
+              {" Average vote "} {tv.vote_average}{" "}
             </Typography>
           </Grid>
         </Grid>
       </CardContent>
       <CardActions disableSpacing>
         {action(tv)}
-        <Link to={`/persons/${tv.id}`}>
+        <Link to={`/tvs/${tv.id}`}>
           <Button variant="outlined" size="medium" color="primary">
             More Info ...
           </Button>
