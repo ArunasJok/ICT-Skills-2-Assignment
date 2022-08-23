@@ -64,7 +64,7 @@ e.g.
 
 
 
-[d1]: ./public/listTV.jpg
+[d1]: ./public/profile.png
 [d2]: ./public/specificTV.jpg
 [detail]: ./public/detail.png
 [caching]: ./public/caching.png
