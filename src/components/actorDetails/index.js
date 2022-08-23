@@ -71,6 +71,13 @@ const ActorDetails = ( {person}) => {
         <Chip label={`Released: ${person.also_known_as}`} />
       </Paper>
       </div>
+
+      <Typography variant="h5" component="h3">
+        Filmography
+      </Typography>
+      
+      
+
       {/* New */}
       <Fab    
         color="secondary"

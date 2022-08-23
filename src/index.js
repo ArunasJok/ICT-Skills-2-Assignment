@@ -17,6 +17,7 @@ import ActorPage from './pages/actorDetailsPage';
 import TvSeriesListPage from "./pages/tvSeriesListPage"
 import SeriesContextProvider from "./contexts/seriesContext";
 import SeriePage from './pages/serieDetailsPage';
+import SimilarPage from "./pages/similarMoviePage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -40,6 +41,7 @@ const App = () => {
                 <Route path="/reviews/form" element={<AddMovieReviewPage/>} />
                 <Route path="/movies/favourites" element={<FavouriteMoviesPage/>} />
                 <Route path="/movies/:id" element={<MoviePage/>} />
+                <Route path="/similars/:id" element={<SimilarPage/>} />   
                 <Route path="/" element={<HomePage />} />
                 <Route path="/movies/upcoming" element={<UpcomingMoviesPage/>} />   
                 <Route path="/persons" element={<ActorListPage/>} />
