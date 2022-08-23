@@ -59,13 +59,22 @@ e.g.
 
 ![][d2]
 
-![][detail]
+![][d3]
+
+![][d4]
+
+![][d5]
+
+![][d6]
+
+![][d7]
 
 
 
-
-[d1]: ./public/profile.png
-[d2]: ./public/specificTV.jpg
-[detail]: ./public/detail.png
-[caching]: ./public/caching.png
-[stories]: ./public/stories.png
+[d1]: ./public/listTV.png
+[d2]: ./public/specificTV.png
+[d3]: ./public/actorList.png
+[d4]: ./public/actorDetail.png
+[d5]: ./public/similar1.png
+[d6]: ./public/similar2.png
+[d7]: ./public/similar3.png
