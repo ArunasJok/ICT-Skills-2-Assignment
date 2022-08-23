@@ -53,7 +53,7 @@ e.g.
 
 >The view below lists most popular TV shows. 
 
-![][d1]
+![][./public/listTV.png]
 
 >The view below shows detailed information on a specific TV show.
 
